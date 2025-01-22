@@ -1,0 +1,157 @@
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Contenitore principale */
+.container-fluid {
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Box centrale */
+.col-md-8 {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    max-width: 700px;
+}
+
+/* Titolo */
+h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Textarea per note */
+.form-control {
+    border-radius: 8px;
+    border: 2px solid #764ba2;
+    background-color: #f8f9fa;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Effetto focus sull'input */
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(118, 75, 162, 0.5);
+}
+
+/* Lista delle task */
+.list-group {
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Elemento della lista */
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: antiquewhite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Effetto hover sugli elementi della lista */
+.list-group-item:hover {
+    background-color: #2966a3;
+    transform: translateY(-5px);
+}
+
+/* Titolo della task e checkbox */
+.task-title {
+    display: flex;
+    align-items: center;
+}
+
+.task-title input[type="checkbox"] {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Titolo task */
+.task-title span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin-left: 10px;
+}
+
+/* Azioni dei pulsanti */
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Pulsanti */
+button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Pulsante successo */
+button.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.btn {
+    margin-left: 10px;
+}
+
+.completa-task{
+    background-color: #28a745;  /* Colore verde per la task completata */
+  color: white;  /* Testo bianco per contrasto */
+}
+
+/* Pulsante informazioni */
+button.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: white;
+}
+
+/* Pulsante per cancellare */
+button.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+/* Hover sui pulsanti */
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pulsante di cancellazione */
+.delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.list-group-item:hover .delete-btn {
+    opacity: 1;
+}
