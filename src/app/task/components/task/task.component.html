@@ -5,7 +5,7 @@
             <label for="text" class="form-label text-balck">📝 Note personali</label>
             <div class="mb-3 d-flex">
                 
-                <input class="form-control" id="text" rows="3" placeholder="Scrivi le tue note qui..." [(ngModel)]="nuovaTask" (input)="controllaInput()">
+                <input class="form-control" id="text" rows="3" placeholder="Scrivi le tue note qui..." [(ngModel)]="nuovaTask" >
                 <button id="btnAggiungi" class="btn btn-success" (click)="modificaMode? salvaModifiche(): aggiungi(nuovaTask)" [disabled]="!nuovaTask" [ngClass]="modificaMode? 'btn-danger':'btn-success'">{{modificaMode? 'Cambia':'Aggiungi'}}</button>
             </div>
 

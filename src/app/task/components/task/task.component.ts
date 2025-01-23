@@ -63,11 +63,7 @@ export class TaskComponent implements OnInit{
     this.modificaMode = false
  }
 
- controllaInput():void {
-    if(!this.nuovaTask.trim()){
-      this.annullaModifica()
-    }
- }
+
 
  pulisciInput(){
     this.nuovaTask = ""
