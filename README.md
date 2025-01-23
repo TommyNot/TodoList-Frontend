@@ -1,27 +1,50 @@
-# TodoList
+## 📋 Lista Impegni - Frontend  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+Un'applicazione Angular per gestire la tua lista di impegni in modo semplice e intuitivo. ✅  
 
-## Development server
+### 📌 Funzionalità  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 📜 Aggiungere nuove task  
+- ✏️ Modificare le task esistenti  
+- ✅ Segnare una task come completata  
+- 🗑️ Eliminare una task  
 
-## Code scaffolding
+### 🚀 Tecnologie Utilizzate  
+- 🅰️ Angular  
+- 🎨 Bootstrap  
+- 📝 HTML, CSS, TypeScript  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 📦 Installazione  
+1. **Clona il repository**  
+   ```bash
+   git clone https://github.com/TommyNot/TodoList-Frontend.git
+   ```
+2. **Vai nella cartella del frontend**  
+   ```bash
+   cd TodoList-Frontend
+   ```
+3. **Installa le dipendenze**  
+   ```bash
+   npm install bootstrap
+   npm install bootstrap-icons
+   ```
+4. **Avvia l'applicazione**  
+   ```bash
+   ng serve
+   ```
+5. **Apri il browser** e vai su `http://localhost:4200/` 🌍  
 
-## Build
+### 🎨 Stile  
+L'app utilizza Bootstrap per un'interfaccia moderna e responsive.  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 📷 Anteprima  
+![image](https://github.com/user-attachments/assets/98683f68-fac7-4a28-8e83-310ce378f41f)
+![image](https://github.com/user-attachments/assets/e81381b9-a75d-477f-8c78-89d2ac40b494)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### 🤝 Contribuire  
+Se vuoi migliorare l'app, sentiti libero di fare una **Pull Request** o aprire un **Issue**. 🎯  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 📜 Licenza  
+MIT License 📄  
