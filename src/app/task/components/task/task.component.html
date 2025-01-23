@@ -5,19 +5,20 @@
             <label for="text" class="form-label text-balck">📝 Note personali</label>
             <div class="mb-3 d-flex">
                 
-                <input class="form-control" id="text" rows="3" placeholder="Scrivi le tue note qui..." [(ngModel)]="nuovaTask">
-                <button id="btnAggiungi" class="btn btn-success" (click)="aggiungi(nuovaTask)" [disabled]="!nuovaTask">Aggiungi</button>
+                <input class="form-control" id="text" rows="3" placeholder="Scrivi le tue note qui..." [(ngModel)]="nuovaTask" (input)="controllaInput()">
+                <button id="btnAggiungi" class="btn btn-success" (click)="modificaMode? salvaModifiche(): aggiungi(nuovaTask)" [disabled]="!nuovaTask" [ngClass]="modificaMode? 'btn-danger':'btn-success'">{{modificaMode? 'Cambia':'Aggiungi'}}</button>
             </div>
 
             <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let task of taskLista">
+                <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let task of taskLista" [ngClass]="task.completa ? 'list-group-item-success' : 'danger'">
+                    
                     <div class="task-title">
                         <span>{{task.titolo}}</span>
                     </div>
-                    <span class="task-actions">
-                        <button class="btn btn-success btn-sm mx-2" >✅</button>
-                        <button class="btn btn-info btn-sm mx-2">📝</button>
-                        <button class="btn btn-danger btn-sm mx-2" (click)="elimina(task.id)">❌</button>
+                    <span class="task-actions" >
+                        <button class="btn btn-success btn-sm mx-2" (click)="aggiornaStatus(task,task.id)" >✅</button>
+                        <button class="btn btn-info btn-sm mx-2"  (click)="aggiornaTask(task,task.id)" (click)="modificaTask(task)">📝</button>
+                        <button class="btn btn-warning btn-sm mx-2" (click)="elimina(task.id)">🗑️</button>
                     </span>
                 </li>
             </ul>

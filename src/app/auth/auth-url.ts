@@ -11,9 +11,14 @@ export class AuthUrl{
         return mainUrl + "/aggiungi"
     }
 
-    static aggiornaTask(){
+    static aggiornaTask(id:number){
 
-        return mainUrl + "/aggiorna/{id}"
+        return `${mainUrl}/aggiorna/${id}`;
+    }
+
+    static aggiornaStatusTask(id:number){
+
+        return `${mainUrl}/aggiorna/check/${id}`;
     }
 
     static eliminaTask(id:number){

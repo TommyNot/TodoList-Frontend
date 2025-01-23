@@ -13,6 +13,9 @@ export class TaskComponent implements OnInit{
 
   nuovaTask: string = "";
   taskLista: any[] = [];
+  modificaMode:boolean = false;
+  taskDaModificare:Task | null = null;
+
 
  
 
@@ -42,6 +45,71 @@ export class TaskComponent implements OnInit{
       }
     })
   
+  }
+
+  modificaTask(task:Task):void{
+    if(this.taskDaModificare && this.taskDaModificare.id === task.id){
+      this.annullaModifica()
+      return
+    }
+    this.nuovaTask = task.titolo
+    this.taskDaModificare = task;
+    this.modificaMode = true;
+  }
+
+ annullaModifica():void{
+    this.nuovaTask =""
+    this.taskDaModificare = null;
+    this.modificaMode = false
+ }
+
+ controllaInput():void {
+    if(!this.nuovaTask.trim()){
+      this.annullaModifica()
+    }
+ }
+
+ pulisciInput(){
+    this.nuovaTask = ""
+    this.modificaMode = false;
+ }
+
+ salvaModifiche(){
+  const taskAggionata = {
+    ...this.taskDaModificare , 
+    titolo:this.nuovaTask
+  }
+  this.aggiornaTask(taskAggionata,taskAggionata.id)
+  this.pulisciInput()
+ }
+
+
+
+  aggiornaTask(task:any,id:any):void{
+    this.nuovaTask = task.titolo
+    
+    this.service.aggiornaTask(task,id).subscribe({
+      next: (res)=>{
+        this.taskLista=this.taskLista.filter(task=>task.id!==id)
+      },
+      error:(errore)=>{
+        console.error("Errore nell'aggiornamento della task",errore)
+      }
+    })
+  }
+
+
+ 
+
+  aggiornaStatus(tas:any,id:number):void{
+    this.service.aggiornaStatus(tas,id).subscribe({
+      next: (res)=>{
+        this.taskLista=this.taskLista.filter(task=> task.id !== id)
+      },
+      error:(errore)=>{
+        console.error("Errore nell'aggiornamento dello status",errore)
+      }
+    })
   }
 
 

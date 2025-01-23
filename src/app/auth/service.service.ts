@@ -49,5 +49,23 @@ export class ServiceService {
       })
     );
   }
+
+  aggiornaTask(body:Task,id:any):Observable<void>{
+
+    return this.http.put<void>(AuthUrl.aggiornaTask(id),body,{observe:"response"}).pipe(
+      map(()=>{
+        this.findAll().subscribe();
+      })
+    )
+  }
+
+  aggiornaStatus(body:Task,id:number):Observable<void>{
+
+    return this.http.put<void>(AuthUrl.aggiornaStatusTask(id),body,{observe:"response"}).pipe(
+      map(()=> {
+        this.findAll().subscribe();
+      })
+    );
+  }
   
 }
